@@ -26,7 +26,7 @@ class BmChat(commands.Cog):
             await ctx.send("This can only be used in the appropriate channel")
         
     @say.error
-    async def say_error(ctx, error):
+    async def say_error(self, ctx, error):
         if isinstance(error, commands.errors.MissingRole):
             await ctx.send('You don\'t have the permission to do that')
 
