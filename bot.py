@@ -7,6 +7,8 @@ from cogs import secret
 def setup_logger():
     logging.basicConfig(filename='bot.log', level=logging.INFO)
 
+
+
 class Bot(commands.Bot):
     def __init__(self, **kwargs):
         super().__init__(command_prefix=commands.when_mentioned_or('!'), **kwargs)

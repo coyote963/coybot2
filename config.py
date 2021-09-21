@@ -1,3 +1,3 @@
 cogs = [
-	'cogs.chat'
+	'cogs.bmchat'
 ]
