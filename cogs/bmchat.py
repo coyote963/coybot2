@@ -12,7 +12,7 @@ class BmChat(commands.Cog):
 
 
     @commands.command()
-    @commands.has_role('Chatter')
+    @commands.has_role('TDM-Chat')
     async def say(self, ctx, *args):
         """Sends a message to the boring man chat"""
         chan_id = str(ctx.channel.id)
@@ -25,9 +25,9 @@ class BmChat(commands.Cog):
         else:
             await ctx.send("This can only be used in the appropriate channel")
         
-    @info.error
-    async def info_error(ctx, error):
-        if isinstance(error, commands.errors.BadArgument):
+    @say.error
+    async def say_error(ctx, error):
+        if isinstance(error, commands.errors.MissingRole):
             await ctx.send('You don\'t have the permission to do that')
 
 
